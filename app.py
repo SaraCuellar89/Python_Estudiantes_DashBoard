@@ -4,10 +4,11 @@ from database import conectar, Obtener_Usuario, Insertar_Estudiante, buscar_estu
 from dash_principal import crear_tablero
 import pandas as pd
 import unicodedata
+import os
 
 
 app = Flask(__name__)
-app.secret_key = "contrasena_1234"
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 crear_tablero(app)
 
 # ===================== Rutas =====================
