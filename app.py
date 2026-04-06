@@ -8,7 +8,7 @@ import unicodedata
 
 app = Flask(__name__)
 app.secret_key = "contrasena_1234"
-dash_app = crear_tablero(app)
+crear_tablero(app)
 
 # ===================== Rutas =====================
 
@@ -300,12 +300,17 @@ def ruta_obtener_carreras():
 
 # --------- Llamado del servidor ---------
 if __name__ == "__main__":
-    try:
-        conexion = conectar()
-        print(" ======= Conexion Exitosa =======")
-        conexion.close()
-    except Exception as e:
-        print("Error al conectar:", e)
     
-    print(" ======= Servidor corriendo en: http://127.0.0.1:5000/ =======")
-    app.run(debug=True)
+    # -------- Correr el servidor en desarollo o local --------
+    # try:
+    #     conexion = conectar()
+    #     print(" ======= Conexion Exitosa =======")
+    #     conexion.close()
+    # except Exception as e:
+    #     print("Error al conectar:", e)
+    
+    # print(" ======= Servidor corriendo en: http://127.0.0.1:5000/ =======")
+    # app.run(debug=True)
+    
+    # -------- Correr el servidor despliegue --------
+    app.run()

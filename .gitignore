@@ -1,0 +1,13 @@
+# Entorno virtual
+venv/
+env/
+.venv/
+
+# Variables de entorno
+.env
+.env.*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
